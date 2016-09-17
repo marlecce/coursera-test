@@ -7,7 +7,7 @@ angular.module('LunchCheck', [])
 LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
 
-  $scope.data = "Pizza, tua sorella";
+  $scope.data = "";
   $scope.message = "";
 
   $scope.checkData = function () {
@@ -23,7 +23,7 @@ function LunchCheckController($scope) {
       var data = [];
       var j = 0;
       for (var i = 0; i < rawdata.length; i++) {
-          console.log(rawdata[i].trim());
+          //console.log(rawdata[i].trim());
           if ( rawdata[i].trim() !== '' ) {
             data[j] = rawdata[i];
             j++;
