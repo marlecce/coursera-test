@@ -1,0 +1,15 @@
+body a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body a:hover {
+    text-decoration: underline;
+    cursor: auto;
+    color: #cc0000;
+}
+
+body li {
+  list-style-type: none;
+  margin-top: 10px;
+}
