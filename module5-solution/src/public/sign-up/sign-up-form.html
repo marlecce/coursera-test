@@ -36,7 +36,7 @@
         <div class="form-group">
           <label for="exampleInputPhoneNumber">Phone Number</label>
           <input type="text" class="form-control" name="phone" placeholder="Phone ###-###-####"
-          pattern="(\d{3})-(\d{3})-(\d{4})" ng-model="su.user.phone">
+          pattern="(\d{3})-(\d{3})-(\d{4})" ng-model="su.user.phone" required>
           <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
