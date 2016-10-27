@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <form name='regForm' novalidate>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" name="useremail" placeholder="Email" required ng-model="su.user.useremail">
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFirstName">First Name</label>
+          <input type="text" class="form-control" name="firstname"
+          placeholder="First Name"
+          required
+          minlength="4"
+          ng-maxlength="10" ng-model="su.user.firstname">
+          <span
+            ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+            First Name must be at least 4 characters long
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputLastName">Last Name</label>
+          <input type="text" class="form-control" name="lastname"
+          placeholder="Last Last"
+          required
+          minlength="4"
+          ng-maxlength="10" ng-model="su.user.lastname">
+          <span
+            ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+            Last Name must be at least 4 characters long
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPhoneNumber">Phone Number</label>
+          <input type="text" class="form-control" name="phone" placeholder="Phone ###-###-####"
+          pattern="(\d{3})-(\d{3})-(\d{4})" ng-model="su.user.phone">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputShortName">Favorite Dish</label>
+          <input type="text" class="form-control" name="shortname"
+          placeholder="Favorite Dish" ng-model="su.user.shortname">
+        </div>
+        <div class="alert alert-danger" ng-if="su.errorMessage">
+          <strong>{{su.errorMessage}}</strong>
+        </div>
+        <button ng-click="su.submit()" ng-disabled="regForm.$invalid"
+        class="btn btn-success">Submit</button>
+      </form>
+      <br>
+      <div class="alert alert-success" ng-if="su.message">
+        <strong>{{su.message}}</strong>
+      </div>
+    </div>
+  </div>
+</div>

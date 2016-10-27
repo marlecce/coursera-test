@@ -1,0 +1,8 @@
+<div ng-if="mi.user">
+	<h3>Name: {{mi.user.firstname}} {{ mi.user.lastname}}</h3>
+	<h4>Phone Number: {{mi.user.phone}}</h4>
+	<item item="mi.item"></item>
+</div>
+<div ng-if="mi.errorMsg">
+  <strong>{{mi.errorMsg}} <a ui-sref="public.sign_up">Sign up Now!</a></strong>
+</div>
